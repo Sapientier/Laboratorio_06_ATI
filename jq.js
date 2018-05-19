@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 $(document).ajaxError(function(e, jqXHR, settings, exception) {
+	// Validamos los mensajes que envia el protocolo HTTP
 	switch (jqXHR.status) {
 		case 0:
 			alert("404 Page Not Found");
@@ -40,8 +41,9 @@ var loadDoc = function() {
 	});
 }
 
+// funcion principal
 function myFunction( xml ) {
-	var i;
+	var i = 0;
 	var xmlDoc = $.parseXML(xml);
 	var table="<tr><th>Artista</th><th>Titulo</th></tr>";
 	$("#demo").empty();
