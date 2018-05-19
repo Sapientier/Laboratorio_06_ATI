@@ -4,6 +4,7 @@ window.onload = function(){
 	};
 }
 
+// Carga la data en la pagina
 function loadDoc() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -16,14 +17,14 @@ function loadDoc() {
 }
 
 function myFunction(xml) {
-	var i;
+	var i = 0;
 	var xmlDoc = xml.responseXML;
 	var table="<tr><th>Artista</th><th>Titulo</th></tr>";
-	var x = xmlDoc.getElementsByTagName("CD");
-	for (i = 0; i <x.length; i++) { 
+	var y = xmlDoc.getElementsByTagName("CD");
+	for (i = 0; i <y.length; i++) { 
 		table += "<tr><td>" +
-		x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td><td>" +
-		x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td></tr>";
+		y[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td><td>" +
+		y[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td></tr>";
 	}
 	document.getElementById("demo").innerHTML = table;
 }
